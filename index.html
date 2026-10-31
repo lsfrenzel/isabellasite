@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5dc">
+  <meta name="description" content="Portfólio profissional de Isabella Viana Lopes. Estudante do Ensino Médio, interessada em comunicação e marketing digital e em busca da primeira oportunidade profissional.">
+  <title>Isabella Viana Lopes — Portfólio profissional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f5f5dc;
+      --white: #ffffff;
+      --ink: #242424;
+      --charcoal: #333333;
+      --muted: #6b6b63;
+      --line: #deded0;
+      --navy: #000080;
+      --green: #006400;
+      --radius: 8px;
+      --container: 1180px;
+      --serif: "Lora", Georgia, serif;
+      --ease: 240ms ease-out;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { font: inherit; }
+    .container { width: min(var(--container), calc(100% - 3rem)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--navy);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-weight: 600; line-height: 1.15; }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); letter-spacing: -.055em; margin: 1rem 0 1.4rem; }
+    h2 { font-size: clamp(2rem, 4vw, 3.25rem); letter-spacing: -.04em; margin-bottom: 1.2rem; }
+    h3 { font-size: 1.2rem; margin-bottom: .6rem; }
+    p { max-width: 68ch; color: var(--muted); }
+    .section { padding-block: clamp(4.5rem, 9vw, 7.5rem); }
+    .section-heading { max-width: 680px; margin-bottom: 3rem; }
+    .section-heading p { font-size: 1.03rem; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(245,245,220,.96);
+      border-bottom: 1px solid rgba(51,51,51,.12);
+      backdrop-filter: blur(12px);
+    }
+    .nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { text-decoration: none; font-size: .98rem; font-weight: 700; letter-spacing: -.02em; }
+    .brand span { display: block; color: var(--muted); font-size: .68rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); }
+    .nav-links a { position: relative; text-decoration: none; font-size: .86rem; color: var(--charcoal); }
+    .nav-links a::after { position: absolute; right: 0; bottom: -7px; left: 0; height: 2px; content: ""; background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform var(--ease); }
+    .nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
+    .menu-toggle { display: none; border: 1px solid var(--line); border-radius: var(--radius); padding: .55rem .7rem; background: transparent; color: var(--ink); cursor: pointer; }
+    .menu-toggle svg { display: block; }
+
+    .hero { padding-block: clamp(4rem, 8vw, 7.5rem) clamp(5rem, 10vw, 8.5rem); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(270px, .75fr); align-items: center; gap: clamp(2.5rem, 8vw, 7rem); }
+    .hero-copy { position: relative; z-index: 1; }
+    .hero h1 span { display: block; color: var(--navy); font-style: italic; font-weight: 500; }
+    .hero-intro { max-width: 570px; font-size: clamp(1.02rem, 1.8vw, 1.2rem); margin-bottom: 2rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .85rem; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: .65rem; min-height: 48px; padding: .75rem 1.15rem; border: 1px solid var(--navy); border-radius: var(--radius); text-decoration: none; font-size: .9rem; font-weight: 600; transition: transform var(--ease), background var(--ease), color var(--ease), box-shadow var(--ease); cursor: pointer; }
+    .button-primary { color: var(--white); background: var(--navy); }
+    .button-primary:hover { background: #000066; box-shadow: 0 2px 8px rgba(0,0,0,.08); transform: translateY(-2px); }
+    .button-secondary { color: var(--navy); background: transparent; }
+    .button-secondary:hover { background: rgba(0,0,128,.06); transform: translateY(-2px); }
+    .button:active { transform: translateY(-1px); }
+    .hero-note { margin-top: 2.2rem; padding-top: 1.1rem; border-top: 1px solid var(--line); display: flex; gap: 1.8rem; flex-wrap: wrap; color: var(--muted); font-size: .83rem; }
+    .hero-note span { display: inline-flex; align-items: center; gap: .55rem; }
+    .hero-note svg { color: var(--navy); flex: 0 0 auto; }
+    .visual-panel { position: relative; min-height: 440px; display: grid; place-items: center; }
+    .visual-frame { position: relative; width: min(100%, 390px); aspect-ratio: 4 / 5; border: 1px solid #d3d3c3; padding: 1rem; }
+    .visual-art { position: relative; height: 100%; overflow: hidden; display: grid; place-items: center; background: #e4e3d2; }
+    .visual-art::before { content: ""; position: absolute; width: 72%; aspect-ratio: 1; border: 1px solid rgba(0,0,128,.3); border-radius: 50%; }
+    .visual-art::after { content: ""; position: absolute; width: 53%; aspect-ratio: 1; border: 1px solid rgba(0,0,128,.3); border-radius: 50%; }
+    .art-letter { position: relative; z-index: 1; color: var(--navy); font-size: clamp(6rem, 15vw, 10rem); line-height: 1; font-style: italic; font-weight: 500; letter-spacing: -.12em; transform: translateX(-.12em); }
+    .art-caption { position: absolute; z-index: 2; right: 1.2rem; bottom: 1.2rem; left: 1.2rem; display: flex; justify-content: space-between; gap: .7rem; border-top: 1px solid rgba(0,0,128,.3); padding-top: .7rem; color: var(--navy); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; }
+    .side-label { position: absolute; right: -1.8rem; top: 2rem; writing-mode: vertical-rl; color: var(--muted); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; }
+    .visual-index { position: absolute; bottom: 1rem; left: -.8rem; display: grid; place-items: center; width: 74px; height: 74px; border-radius: 50%; background: var(--navy); color: white; font-size: .78rem; text-align: center; line-height: 1.3; }
+
+    .about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 7vw, 7rem); align-items: start; }
+    .about-aside { padding-top: .6rem; }
+    .about-aside .big-number { color: var(--navy); font-size: clamp(4rem, 9vw, 7rem); line-height: .95; letter-spacing: -.08em; }
+    .about-aside p { margin-top: 1rem; font-size: .9rem; }
+    .about-copy p { font-size: 1.08rem; }
+    .about-quote { margin-top: 2rem; padding: 1.3rem 1.5rem; border-left: 2px solid var(--navy); background: #f8f8f0; color: var(--charcoal); font-size: 1.1rem; }
+
+    .skills-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 1.25rem; align-items: stretch; }
+    .skill-card { padding: clamp(1.5rem, 3vw, 2.2rem); border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.55); transition: transform var(--ease), box-shadow var(--ease); }
+    .skill-card:hover { transform: translateY(-3px); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    .skill-card.featured { background: var(--navy); color: white; border-color: var(--navy); }
+    .skill-card.featured p, .skill-card.featured .skill-meta { color: #e0e0e0; }
+    .skill-card .card-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2.2rem; }
+    .icon-box { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; }
+    .skill-meta { color: var(--muted); font-size: .8rem; }
+    .skill-card h3 { font-size: clamp(1.25rem, 2vw, 1.65rem); }
+    .skill-card p { margin-bottom: 0; }
+    .skill-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+    .skill-list li { display: flex; gap: .75rem; align-items: flex-start; padding: .7rem 0; border-top: 1px solid var(--line); color: var(--charcoal); }
+    .skill-list svg { flex: 0 0 auto; margin-top: .28rem; color: var(--green); }
+    .skill-card.featured .skill-list li { border-color: rgba(255,255,255,.22); color: white; }
+    .skill-card.featured .skill-list svg { color: #d7e7c9; }
+
+    .journey { background: #eeeedc; }
+    .timeline { border-top: 1px solid #d3d3c3; }
+    .timeline-item { display: grid; grid-template-columns: minmax(130px, .55fr) 1.45fr; gap: 2rem; padding: 1.7rem 0; border-bottom: 1px solid #d3d3c3; }
+    .timeline-date { color: var(--navy); font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; }
+    .timeline-item p { margin-bottom: 0; }
+    .timeline-item h3 { margin-bottom: .5rem; }
+
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .project-card { min-height: 245px; display: flex; flex-direction: column; justify-content: space-between; padding: clamp(1.5rem, 3vw, 2.2rem); border: 1px solid var(--line); border-radius: var(--radius); background: var(--white); }
+    .project-card .project-number { color: var(--navy); font-size: .78rem; letter-spacing: .1em; }
+    .project-card h3 { font-size: 1.45rem; margin-top: 2rem; }
+    .project-card p { margin-bottom: 0; font-size: .94rem; }
+    .project-card.empty { background: transparent; border-style: dashed; }
+    .project-card.empty .project-number { color: var(--muted); }
+
+    .contact { background: var(--charcoal); color: var(--white); }
+    .contact .eyebrow { color: #d8d8ef; }
+    .contact h2 { max-width: 700px; }
+    .contact p { color: #d2d2d2; }
+    .contact-grid { display: grid; grid-template-columns: 1fr .8fr; gap: 3rem; align-items: end; }
+    .contact-links { display: grid; gap: .8rem; }
+    .contact-link { display: flex; align-items: center; gap: .9rem; padding: 1rem 0; border-bottom: 1px solid #555; text-decoration: none; overflow-wrap: anywhere; transition: color var(--ease); }
+    .contact-link:hover { color: #d8d8ef; }
+    .contact-link svg { flex: 0 0 auto; color: #d8d8ef; }
+    .contact-label { display: block; color: #bdbdbd; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    footer { padding-block: 1.4rem; background: #292929; color: #c5c5c5; font-size: .78rem; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .footer-inner p { margin: 0; font-size: inherit; color: inherit; }
+    .back-top { color: white; text-decoration: none; }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity 420ms ease-out, transform 420ms ease-out; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    :focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+    .contact :focus-visible { outline-color: white; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 800px) {
+      .container { width: min(var(--container), calc(100% - 2rem)); }
+      .nav-wrap { min-height: 68px; }
+      .menu-toggle { display: inline-flex; align-items: center; gap: .5rem; }
+      .nav-links { display: none; position: absolute; top: calc(100% + 1px); right: 0; left: 0; padding: 1rem; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav-links.is-open { display: flex; }
+      .nav-links a { padding: .8rem .5rem; }
+      .nav-links a::after { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .visual-panel { min-height: 350px; }
+      .visual-frame { width: min(75%, 330px); }
+      .side-label { right: 2%; }
+      .visual-index { left: 7%; }
+      .about-grid, .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-grid { gap: 2rem; }
+      .about-aside { display: flex; align-items: center; gap: 1.2rem; }
+      .about-aside .big-number { font-size: 4.5rem; }
+      .about-aside p { margin: 0; }
+      .contact-grid { gap: 2rem; }
+    }
+    @media (max-width: 540px) {
+      .section { padding-block: 4rem; }
+      h1 { font-size: clamp(2.65rem, 14vw, 4rem); }
+      .hero { padding-top: 3.5rem; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .hero-note { flex-direction: column; gap: .65rem; }
+      .visual-panel { min-height: 320px; }
+      .visual-frame { width: 78%; }
+      .timeline-item { grid-template-columns: 1fr; gap: .5rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card { min-height: 210px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Isabella Viana Lopes, início">
+        Isabella Viana Lopes
+        <span>Portfólio profissional</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span>Menu</span>
+      </button>
+      <nav class="nav-links" id="nav-links" aria-label="Navegação principal">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#competencias">Competências</a>
+        <a href="#formacao">Formação</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Em busca da primeira oportunidade</span>
+          <h1>Olá, sou <span>Isabella.</span></h1>
+          <p class="hero-intro">Estudante do Ensino Médio, com interesse em comunicação e marketing digital. Quero aprender, desenvolver novas habilidades e contribuir com responsabilidade e dedicação.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contato">
+              Vamos conversar
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a class="button button-secondary" href="#sobre">Conheça meu perfil</a>
+          </div>
+          <div class="hero-note">
+            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> Santo André, SP</span>
+            <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Ensino Médio em andamento</span>
+          </div>
+        </div>
+        <div class="visual-panel reveal" aria-label="Elemento gráfico com as iniciais de Isabella">
+          <div class="visual-frame">
+            <div class="visual-art">
+              <span class="art-letter" aria-hidden="true">I.</span>
+              <div class="art-caption"><span>Perfil profissional</span><span>01 / 04</span></div>
+            </div>
+          </div>
+          <span class="side-label">Aprender · Criar · Contribuir</span>
+          <span class="visual-index">ISABELLA<br>VL</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="sobre">
+      <div class="container about-grid">
+        <div class="about-aside reveal">
+          <div class="big-number">01</div>
+          <p>Curiosidade, dedicação<br>e vontade de aprender.</p>
+        </div>
+        <div class="about-copy reveal">
+          <span class="eyebrow">Sobre mim</span>
+          <h2>Começando com vontade de crescer.</h2>
+          <p>Estou em busca da minha primeira experiência profissional, onde eu possa colocar em prática o que venho aprendendo, adquirir novos conhecimentos e desenvolver minhas habilidades.</p>
+          <p>Tenho interesse em comunicação e marketing digital e valorizo a responsabilidade, a dedicação e a oportunidade de aprender com novas experiências.</p>
+          <div class="about-quote">“Quero transformar cada oportunidade em aprendizado e contribuir da melhor forma possível.”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="competencias">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">O que trago comigo</span>
+          <h2>Competências e conhecimentos</h2>
+          <p>Uma base em desenvolvimento, com interesse em aprender e ampliar meus conhecimentos profissionais.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card featured reveal">
+            <div class="card-top">
+              <span class="icon-box"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5Z"/><path d="M4 6h13M8 9h8M8 12h6"/></svg></span>
+              <span class="skill-meta">Conhecimento</span>
+            </div>
+            <h3>Marketing digital com Inteligência Artificial</h3>
+            <p>Conhecimento adquirido em curso, com interesse em comunicação e no uso de ferramentas digitais.</p>
+          </article>
+          <article class="skill-card reveal">
+            <div class="card-top">
+              <span class="icon-box"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m8 10 2 2-2 2M13 14h3"/></svg></span>
+              <span class="skill-meta">Estudos</span>
+            </div>
+            <h3>Inglês</h3>
+            <p>Três anos de estudo do idioma.</p>
+          </article>
+          <article class="skill-card reveal">
+            <div class="card-top">
+              <span class="icon-box"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 7.5 7 10 4-2.5 7-5.5 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+              <span class="skill-meta">Postura profissional</span>
+            </div>
+            <h3>Responsabilidade e dedicação</h3>
+            <p>Compromisso em aprender, colaborar e desenvolver novas competências.</p>
+          </article>
+          <article class="skill-card reveal">
+            <div class="card-top">
+              <span class="icon-box"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="m7 15 4-4 3 2 5-6"/></svg></span>
+              <span class="skill-meta">Desenvolvimento</span>
+            </div>
+            <h3>Vontade de aprender</h3>
+            <p>Interesse em adquirir conhecimentos e crescer com novas experiências.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section journey" id="formacao">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Minha trajetória</span>
+          <h2>Formação e aprendizado</h2>
+          <p>Minha trajetória educacional e os conhecimentos que estou construindo.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-date">Em andamento · 2026</div>
+            <div>
+              <h3>Ensino Médio — 2º ano</h3>
+              <p>Colégio Objetivo Campestre</p>
+              <p>Previsão de conclusão: 2027.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-date">Curso</div>
+            <div>
+              <h3>Marketing Digital com Inteligência Artificial</h3>
+              <p>Curso informado no currículo. Detalhes adicionais não especificados.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-date">Estudos de idioma</div>
+            <div>
+              <h3>Inglês</h3>
+              <p>Três anos de estudo.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Próximos passos</span>
+          <h2>Projetos e experiências</h2>
+          <p>Estou no início da minha trajetória profissional e aberta a oportunidades que me permitam aprender e colaborar.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <span class="project-number">01 / OBJETIVO</span>
+            <div>
+              <h3>Primeira experiência profissional</h3>
+              <p>Busco uma oportunidade para desenvolver habilidades, adquirir conhecimentos e contribuir com responsabilidade.</p>
+            </div>
+          </article>
+          <article class="project-card empty reveal">
+            <span class="project-number">02 / EM CONSTRUÇÃO</span>
+            <div>
+              <h3>Espaço para futuros projetos</h3>
+              <p>Projetos acadêmicos ou de marketing poderão ser adicionados aqui quando houver trabalhos para apresentar.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contato">
+      <div class="container contact-grid">
+        <div class="reveal">
+          <span class="eyebrow">Contato</span>
+          <h2>Vamos conversar sobre uma oportunidade?</h2>
+          <p>Estou disponível para conversar sobre oportunidades de primeira experiência profissional.</p>
+          <a class="button button-secondary" href="mailto:Isabellavianalopes8b@gmail.com" style="color:#fff;border-color:#aaa">Enviar um e-mail
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="contact-links reveal">
+          <a class="contact-link" href="mailto:Isabellavianalopes8b@gmail.com">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <span><span class="contact-label">E-mail</span>Isabellavianalopes8b@gmail.com</span>
+          </a>
+          <a class="contact-link" href="tel:+5511949952312">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/><path d="M10 18h4"/></svg>
+            <span><span class="contact-label">Telefone</span>(11) 94995-2312</span>
+          </a>
+          <div class="contact-link">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span><span class="contact-label">Localização</span>Utinga / Vila Metalúrgica — Santo André, SP</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Isabella Viana Lopes · Portfólio profissional</p>
+      <a class="back-top" href="#inicio">Voltar ao início ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isOpen));
+      navLinks.classList.toggle('is-open', !isOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
